@@ -1,3 +1,7 @@
+<?php
+include "../bootcamp_app/pages/navigation.php";
+?>
+
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
@@ -12,7 +16,3 @@
     </form>
 </body>
 </html>
-
-<?php
-include "../bootcamp_app/pages/navigation.php";
-?>
