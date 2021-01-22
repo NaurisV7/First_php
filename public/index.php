@@ -1,45 +1,41 @@
 <?php
-
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-function loadPage ($page_name) {
-    include "../bootcamp_app/" . $page_name;
-}
-session_start();
-$page_name = 'login.php';
+$sid = "000";
 
-if (isset($_SESSION['username']) &&
-    isset($_SESSION['password']) &&
+session_start();
+$page_name = 'login';
+
+if (isset($_SESSION['username'], $_SESSION['password']) &&
     $_SESSION['username'] === 'valainis' &&
     $_SESSION['password'] === '123'
 ) {
-    if (isset($_GET['page']) && $_GET['page'] === "logout") {
-        $page_name = "logout.php";
-    }
-    else {
-        $page_name = "todo.php";
-    }
-    
-}
-
-else if (isset($_GET['sid']) && $_GET['sid'] === "000") {
-    if (isset($_GET['username']) && isset($_GET['password'])) {
-        if ($_GET['username'] == "valainis" && $_GET['password'] == "123") {
-            $_SESSION['username'] = $_GET['username'];
-            $_SESSION['password'] = $_GET['password'];
-            $page_name = "todo.php";
+    if (isset($_GET['page'])) {
+        if ($_GET['page'] === "logout") {
+            include "../bootcamp_app/actions/logout.php";
+        }
+        else if ($_GET['page'] === "contacts") {
+            $page_name = "contacts";
+        }
+        else {
+            $page_name = "page404";
         }
     }
     else {
-        $page_name = "page404.php";
-    }        
+        $page_name = "todo";
+    }
 }
-loadPage($page_name);
+else if (isset($_GET['page']) && $_GET['page'] === "authenticate") {
+    include "../bootcamp_app/actions/authenticate.php";
+}
+else {
+    //$page_name = "access_denied";
+}
 
-    
+include "../bootcamp_app/pages/" . $page_name . ".php";
+
 ?>
-
 
 
