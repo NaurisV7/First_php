@@ -1,0 +1,98 @@
+body {
+    background: rgb(224, 217, 217);
+  }
+  
+  form {
+    max-width: 300px;
+    margin: auto;
+  }
+  
+  .task-list {
+    margin: auto;
+  }
+  
+  textarea {
+    width: 100%;
+  }
+  
+  .task-list > div {
+    position: relative;
+    padding: 10px;
+    border: 1px solid deepskyblue;
+    background: rgb(174, 228, 238);
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .arrow {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .task-list .done {
+    background: white;
+  }
+  
+  .task-list .done pre {
+    text-decoration: line-through;
+  }
+  .task-list .template {
+    display: none;
+  }
+  
+  .options {
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 5px;
+    width: 100px;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid #000;
+    z-index: 1;
+  }
+  
+  .save {
+    display: none;
+  }
+  .editable .save {
+    display: initial;
+  }
+  
+  .editable .option {
+    display: none;
+  }
+  
+  .task-list .editable {
+    background: #fff;
+  }
+  
+  .options a {
+    text-decoration: none;
+    color: #000;
+    width: 100%;
+    display: inline-block;
+  }
+  
+  .options a:hover {
+    background: lightgrey;
+  }
+  
+  .options a:active {
+    background: grey;
+  }
+  
+  .disapear {
+    display: initial;
+  }
+  
+  .option {
+    align-self: center;
+  }
+  
+  .option svg {
+    width: 4px;
+    padding: 3px;
+  }
+  

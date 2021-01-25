@@ -8,6 +8,10 @@ $sid = "000";
 session_start();
 $page_name = 'login';
 
+function get_url($path = "") {
+    echo BASE_URL . $path;
+}
+
 if (isset($_SESSION['username'], $_SESSION['password']) &&
     $_SESSION['username'] === 'valainis' &&
     $_SESSION['password'] === '123'
@@ -16,8 +20,14 @@ if (isset($_SESSION['username'], $_SESSION['password']) &&
         if ($_GET['page'] === "logout") {
             include "../bootcamp_app/actions/logout.php";
         }
-        else if ($_GET['page'] === "contacts") {
+        elseif ($_GET['page'] === "contacts") {
             $page_name = "contacts";
+        }
+        elseif ($_GET['page'] === "request") {
+            $page_name = "request";
+        }
+        elseif ($_GET['page'] === "test_request") {
+            $page_name = "test_request";
         }
         else {
             $page_name = "page404";
@@ -27,7 +37,7 @@ if (isset($_SESSION['username'], $_SESSION['password']) &&
         $page_name = "todo";
     }
 }
-else if (isset($_GET['page']) && $_GET['page'] === "authenticate") {
+elseif (isset($_GET['page']) && $_GET['page'] === "authenticate") {
     include "../bootcamp_app/actions/authenticate.php";
 }
 else {
