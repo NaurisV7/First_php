@@ -1,10 +1,8 @@
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<title>Static Template</title>
-<link rel="stylesheet" href="style.css" />
 
-<?php include "../bootcamp_app/pages/navigation.php"; ?>
+<?php 
+include "../components/head.php";
+include "../bootcamp_app/pages/navigation.php";
+?>
 
 <h1>Todo page</h1>
 <div>
@@ -24,5 +22,7 @@
     </div>
     </div>
 </div>
-
+<script>
+    let action = "<?php get_url("?page=request") ?>"
+</script>
 <script src="script.js"></script>

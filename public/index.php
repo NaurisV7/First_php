@@ -8,7 +8,7 @@ $sid = "000";
 session_start();
 $page_name = 'login';
 
-const BASE_URL = "http://localhost/webbootcamp/public/";
+const BASE_URL = "http://localhost/";
 
 function get_url($path = "") {
     echo BASE_URL . $path;
