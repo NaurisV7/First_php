@@ -94,16 +94,19 @@ const TaskList = function (container, callback) {
   
     const startEdit = function (event) {
       event.stopPropagation();
-      if (!this.classList.contains("done")) {
-        this.querySelector("pre").setAttribute("contenteditable", true);
-        this.classList.add("editable");
-        this.querySelector(".options").classList.remove("disapear");
+      console.log(this.element);
+      if (!this.element.classList.contains("done")) {
+        console.log(this);
+        this.element.querySelector("pre").setAttribute("contenteditable", true);
+        this.element.classList.add("editable");
+        this.element.querySelector(".options").classList.remove("disapear");
       }
     };
   
     const saveChanges = function (event) {
       event.stopPropagation();
-      let order = this.element.getAttribute("data-order");
+      console.log(document.querySelector(""));
+      let order = this.getAttribute("data-order");
       this.tasks_object[order].text = this.element.querySelector('pre').textContent;
   
       this.element.classList.remove("editable");
