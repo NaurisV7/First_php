@@ -20,7 +20,7 @@ else {
 }
 
 function update ($todos) {
-    $file_name = 'json_database.json';
+    $file_name = '../bootcamp_app/json_database.json';
     file_put_contents($file_name, json_encode($todos));
     return json_encode([
         'status' => 'success',
@@ -30,7 +30,7 @@ function update ($todos) {
 }
 
 function get() {
-    $file_name = 'json_database.json';
+    $file_name = '../bootcamp_app/json_database.json';
     if (file_exists($file_name)) {
         return json_encode([
             'status' => 'success',

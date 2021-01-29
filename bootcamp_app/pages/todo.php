@@ -22,7 +22,6 @@ include "../bootcamp_app/pages/navigation.php";
     </div>
     </div>
 </div>
-<script>
-    let action = "<?php get_url("?page=request") ?>"
-</script>
+<script>let action = "<?php get_url("?page=request") ?>";</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="script.js"></script>

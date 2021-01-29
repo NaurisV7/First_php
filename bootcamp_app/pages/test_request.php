@@ -28,10 +28,10 @@ include "../bootcamp_app/pages/navigation.php";
         let form = this;
 
         $.ajax({
-            method: 'post',
-            url: āction,
-            data: JSON_stringify(task_list)
-        }).done(function (msg){
+            method: form.getAttribute('method'),
+            url: form.getAttribute('action'),
+            data: $(form).serialize()
+        }).done(function (msg) {
             console.log(msg);
         });
     });
